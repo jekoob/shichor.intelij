@@ -7,12 +7,13 @@ public class BaseTest {
 public WebDriver driver;
 	private io.github.bonigarcia.wdm.WebDriverManager WebDriverManager;
 
-	@BeforeClass
+	/*@BeforeClass
 	public void bfc01_setup() {
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 		driver.get("https://www.shichor.co.il/en");
 	}
+*/
 
 	
 	
