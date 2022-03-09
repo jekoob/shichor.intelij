@@ -12,13 +12,13 @@ public class NavbarTest extends BaseTest {
 //		hp.goback();
 		hp.waiting(2000);
 	}
-	@Test
+/*	@Test
 	public void tc02_myTripLink() {
 		HomePage hp = new HomePage(driver);
 		hp.myTripBtn();
 		hp.waiting(2000);
 		hp.goback();
-	}
+	}*/
 	@Test
 	public void tc03_covidAssistLink() {
 		HomePage hp = new HomePage(driver);
