@@ -6,9 +6,5 @@ public class HomePage extends NavbarPage {
 
 	public HomePage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
-
-	
-	
 }
