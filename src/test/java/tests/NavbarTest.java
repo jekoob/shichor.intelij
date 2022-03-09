@@ -19,10 +19,10 @@ public class NavbarTest extends BaseTest {
 		hp.waiting(2000);
 		hp.goback();
 	}
-/*	@Test
+	@Test
 	public void tc03_covidAssistLink() {
 		HomePage hp = new HomePage(driver);
 		hp.covidAssitBtn();
-	}*/
+	}
 
 }
