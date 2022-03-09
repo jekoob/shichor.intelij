@@ -9,7 +9,9 @@ public WebDriver driver;
 
 	@BeforeClass
 	public void bfc01_setup() {
+		System.setProperty("webdriver.chrome.driver",
 				"C:\\automation\\drivers\\chromedriver.exe");
+
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 		driver.get("https://www.shichor.co.il/en");
