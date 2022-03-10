@@ -1,6 +1,7 @@
 package objects;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Set;
 
 import org.openqa.selenium.Dimension;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class BasePage {
 	WebDriver driver;
@@ -49,8 +51,6 @@ public class BasePage {
 	
 	void click(WebElement el) {
 		highlightElement(el, "green", "yellow");
-		// WRITE TO LOG
-//		waitForVisibilityOf(el);
 		wait.until(ExpectedConditions.elementToBeClickable(el));
 		el.click();
 	}
@@ -65,10 +65,13 @@ public class BasePage {
 		s.selectByValue(value);
 	}
 
-	String getTitle() {
+	public String getTitle() {
 		return driver.getTitle();
 	}
-
+	public void volidateTitle(String Expected){
+		System.out.println(getTitle());
+		Assert.assertTrue(getTitle().toLowerCase().contains(Expected.toLowerCase()));
+	}
 	// Alert
 	void alertOK(String text) {
 		driver.switchTo().alert().sendKeys(text);
@@ -82,7 +85,15 @@ public class BasePage {
 	void alertCancel() {
 		driver.switchTo().alert().dismiss();
 	}
-
+	void switchTabs(String expected){
+		waiting(1000);
+		ArrayList<String> windows = new ArrayList<String> (driver.getWindowHandles());
+		driver.switchTo().window(windows.get(1));
+		volidateTitle(expected);
+		waiting(1000);
+		driver.close();
+		driver.switchTo().window(windows.get(0));
+	}
 	// Mouse
 	void dragAndDrop(WebElement src, WebElement target) {
 		highlightElement(src, "yellow", "orange");

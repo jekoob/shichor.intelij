@@ -12,15 +12,8 @@ public class NavbarTest extends BaseTest {
 	public void tc01_destinationsLink() {
 		HomePage hp = new HomePage(driver);
 		hp.destinationsBtn();
-		DestinationsPage dp = new DestinationsPage(driver);
-		Assert.assertTrue(dp.isDestinsationPage());
+		hp.isDestinsationPage();
 		hp.goback();
-//		DestinationsPage dp = new DestinationsPage(driver);
-//		Assert.assertTrue(dp.isDestinsationPage());
-//		DestinationsPage dp = new D
-//		bp.moveToNewWindow();
-//		Assert.assertTrue(bp.isBookingPage());
-//		bp.moveToMainWindow();
 	}
 
 	@Test

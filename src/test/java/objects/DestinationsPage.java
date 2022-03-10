@@ -8,12 +8,12 @@ public class DestinationsPage extends NavbarPage {
 		super(driver);
 	}
 
-	public boolean isDestinsationPage() {
+/*	public boolean isDestinsationPage() {
 		String title = getTitle();
 		System.out.println(title);
 		boolean a;
 		if (title.contains("Destinations")) a = true;
 		else a = false;
 		return a;
-	}
+	}*/
 }
