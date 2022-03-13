@@ -21,7 +21,17 @@ public class NavbarPage extends BasePage {
 	List<WebElement> dropDownList;
 	@FindBy(css = ".app-header__container .app-header__desktop .header-dropdown__title")
 	WebElement ServicesBtn;
-
+	@FindBy(css = ".app-header__container .app-header__desktop .btn-dark-blue.btn")
+	WebElement signInBtn;
+	@FindBy(css = ".sign-in-form__footer>a:nth-child(2)")
+	WebElement signUpBtn;
+	@FindBy(css = ".sign-up-form .form-input__wrapper>input")
+	List<WebElement> feildsSignUp;
+	@FindBy(css = ".sign-up-form .form-field.error")
+	List<WebElement> errorLable;
+	@FindBy(css = ".sign-up-form [type='submit']")
+	WebElement createBtnProfile;
+	
 	public NavbarPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -48,6 +58,39 @@ public class NavbarPage extends BasePage {
 		System.out.println(driver.getWindowHandles());
 		switchTabs("Tripready");
 	}
+	
+	public void SignUp(String firstName, String lastName, String email, String pass) {
+		click(signInBtn);
+		click(signUpBtn);
+//		filltext(firstNFeild, firstName);
+//		filltext(lastNFeild, lastName);
+//		filltext(emailFeild, email);
+//		filltext(passFeild, pass);
+//		click(termsBtn);
+		click(createBtnProfile);
+		
+		
+		
+		for (int i = 0; i < feildsSignUp.size(); i++) {
+			switch (i) {
+			case 0:
+				for (int j = 0; j < feildsSignUp.size(); j++) {
+					System.out.println(feildsSignUp.get(j).getAttribute("id"));
+					String expectedError = getText(errorLable.get(j));
+					Assert.assertTrue(expectedError.equalsIgnoreCase("Required"));
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		
+	}
+	
+	
+	
+	
 
 	public void dropDownServices(int indexOf) {
 		waiting(3000);
@@ -56,17 +99,21 @@ public class NavbarPage extends BasePage {
 		System.out.println(dropDownList.get(indexOf).getText());
 		click(dropDownList.get(indexOf));
 		String expected;
-		switch (indexOf){
-			case 2 :
-				expected = "viator";
-				break;
-			case 3 :
-				expected = "מגדל";
-				break;
-			case 4 :	expected = "Shichor WL";
-				break;
-			default:
-				expected = dropDownList.get(indexOf).getText();
+		switch (indexOf) {
+		case 0:
+			expected = "Booking.com";
+			break;
+		case 2:
+			expected = "viator";
+			break;
+		case 3:
+			expected = "מגדל";
+			break;
+		case 4:
+			expected = "Shichor WL";
+			break;
+		default:
+			expected = dropDownList.get(indexOf).getText();
 		}
 
 		switchTabs(expected);

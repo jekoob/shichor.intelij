@@ -1,0 +1,1 @@
+{"uuid":"4d437273-49b3-4e9b-83d5-bbd09fb90570","name":"tests.NavbarTest","children":["c4eb612b-ea38-4da7-ae55-35767591fb29"],"befores":[{"name":"bfc01_setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1647200672360,"stop":1647200694441}],"afters":[],"start":1647200672141,"stop":1647200715222}

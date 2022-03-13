@@ -1,9 +1,7 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import objects.DestinationsPage;
 import objects.HomePage;
 
 public class NavbarTest extends BaseTest {
