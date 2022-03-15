@@ -11,8 +11,6 @@ public class LoginTest extends NavbarTest {
 	@Test
 	public void tc01_signup_feild_AllNullValues() {
 		HomePage hp = new HomePage(driver);
-		hp.SignUp(" "," "," "," ");
+		hp.SignUp("yossi","issoy","yossi.com","123456");
 	}
-	
-	
 }

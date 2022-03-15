@@ -28,7 +28,7 @@ public class BasePage {
 		js = (JavascriptExecutor) driver;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
-	
+
 //	public void closeiframe(WebElement el, WebElement  ) {
 //		driver.switchTo().frame(el);
 ////		driver.findElement(By.id("close-button")).click();
@@ -37,15 +37,17 @@ public class BasePage {
 
 	void fillText(WebElement el, String text) {
 		highlightElement(el, "green", "yellow");
-		 el.clear();
+		String var = el.getAttribute("src");
+		System.out.println(var);
+		el.clear();
 		waiting(1000);
 		el.sendKeys(text);
 	}
-	
+
 	public void goback() {
 		driver.navigate().back();
 	}
-	
+
 	void click(WebElement el) {
 		highlightElement(el, "green", "yellow");
 		wait.until(ExpectedConditions.elementToBeClickable(el));
@@ -65,10 +67,12 @@ public class BasePage {
 	public String getTitle() {
 		return driver.getTitle();
 	}
-	public void volidateTitle(String Expected){
+
+	public void volidateTitle(String Expected) {
 		System.out.println(getTitle());
 		Assert.assertTrue(getTitle().toLowerCase().contains(Expected.toLowerCase()));
 	}
+
 	// Alert
 	void alertOK(String text) {
 		driver.switchTo().alert().sendKeys(text);
@@ -82,15 +86,17 @@ public class BasePage {
 	void alertCancel() {
 		driver.switchTo().alert().dismiss();
 	}
-	void switchTabs(String expected){
+
+	void switchTabs(String expected) {
 		waiting(1000);
-		ArrayList<String> windows = new ArrayList<String> (driver.getWindowHandles());
+		ArrayList<String> windows = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(windows.get(1));
 		volidateTitle(expected);
 		waiting(1000);
 		driver.close();
 		driver.switchTo().window(windows.get(0));
 	}
+
 	// Mouse
 	void dragAndDrop(WebElement src, WebElement target) {
 		highlightElement(src, "yellow", "orange");
@@ -154,10 +160,10 @@ public class BasePage {
 	}
 
 	// Scroll Down on page
-	void scrollDown(WebElement element , WebElement height) {
-		 
-		for(int i =0;i<height.getSize().height;i+=10 ) {
-			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,"+i+")", element);
+	void scrollDown(WebElement element, WebElement height) {
+
+		for (int i = 0; i < height.getSize().height; i += 10) {
+			((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + i + ")", element);
 		}
 	}
 
