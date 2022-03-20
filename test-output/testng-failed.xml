@@ -3,15 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.LoginTest">
+      <class name="tests.DestanationsTest">
         <methods>
-          <include name="tc01_destinationsLink"/>
-          <include name="tc04_dropDownServices"/>
-          <include name="tc03_covidAssistLink"/>
+          <include name="tc01_destanationCheckList"/>
           <include name="bfc01_setup"/>
-          <include name="tc02_myTripLink"/>
         </methods>
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.DestanationsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

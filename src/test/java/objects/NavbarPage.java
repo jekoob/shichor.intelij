@@ -138,4 +138,9 @@ public class NavbarPage extends BasePage {
 		System.out.println(navBtns.get(0).getText());
 		volidateTitle(navBtns.get(0).getText());
 	}
+	
+	
+	
+	
+	
 }
