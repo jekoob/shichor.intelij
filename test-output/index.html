@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Chicken\AppData\Local\Temp\testng-eclipse-1520049853\testng-customsuite.xml</span>
+                    <span>C:\Users\Chicken\AppData\Local\Temp\testng-eclipse-740291470\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -130,15 +130,15 @@
                   <a name="tc01_destanationCheckList">
                   </a> <!-- tc01_destanationCheckList -->
                   <span class="method-name">tc01_destanationCheckList</span>
-                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=99.0.4844.51)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (587, 1309)
+  (Session info: chrome=99.0.4844.82)
 Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
 System info: host: &apos;LAPTOP-59SSMBEA&apos;, ip: &apos;192.168.89.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9fe3959a78ff6d58c85b27aa0b80bb3f, findChildElement {id=f55b4059-ff5f-424f-83e2-e6ad11441783, using=css selector, value=.destinations-page-item__title}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Chicken\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:57067}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57067/devtoo..., se:cdpVersion: 99.0.4844.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9fe3959a78ff6d58c85b27aa0b80bb3f
+Command: [e509f9b995eb8a23ed4d081c3d5f27cb, clickElement {id=df654951-91fd-4aeb-9a06-2db26814b7ae}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Chicken\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:57000}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57000/devtoo..., se:cdpVersion: 99.0.4844.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (e509f9b995eb8a23ed4d081c3d5f27cb)] -&gt; css selector: ul.destinations-page-list&gt;li]
+Session ID: e509f9b995eb8a23ed4d081c3d5f27cb
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -151,12 +151,11 @@ Session ID: 9fe3959a78ff6d58c85b27aa0b80bb3f
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:221)
-	at objects.DestinationsPage.checkPopularList(DestinationsPage.java:27)
-	at tests.DestanationsTest.tc01_destanationCheckList(DestanationsTest.java:15)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at objects.BasePage.click(BasePage.java:54)
+	at objects.DestinationsPage.checkPopularList(DestinationsPage.java:37)
+	at tests.DestanationsTest.tc01_destanationCheckList(DestanationsTest.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -194,7 +193,7 @@ Session ID: 9fe3959a78ff6d58c85b27aa0b80bb3f
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Chicken\AppData\Local\Temp\testng-eclipse-1520049853\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Chicken\AppData\Local\Temp\testng-eclipse-740291470\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -247,12 +246,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'tc01_destanationCheckList')
 data.setCell(0, 2, 'tests.DestanationsTest')
-data.setCell(0, 3, 16225);
+data.setCell(0, 3, 100011);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -287,7 +286,7 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tc01_destanationCheckList</span>
-                <span class="method-start">20456 ms</span>
+                <span class="method-start">34841 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
