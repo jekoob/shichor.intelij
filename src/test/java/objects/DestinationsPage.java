@@ -7,12 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By.ByCssSelector;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class DestinationsPage extends NavbarPage {
 	@FindBy(css = "ul.destinations-page-list>li")
 	List<WebElement> popularList;
-
+	@FindBy(css=".destinations-page-list-wrap")
+	WebElement destinationsListComtainer;
 	public DestinationsPage(WebDriver driver) {
 		super(driver);
 	}
@@ -25,27 +27,18 @@ public class DestinationsPage extends NavbarPage {
 	public int getLestLength() {
 		return popularList.size();
 	}
-	public boolean checkPopularList(int counter) {
-	
-
-			System.out.println("Loop: " + counter);
-			String expected = getText(popularList.get(counter).findElement(By.cssSelector(".destinations-page-item__title")));
-			//String expected = getText(el.findElement(By.cssSelector(".destinations-page-item__title")));
+	public String GetDestinationTitle(int index) {
+		wait.until(ExpectedConditions.visibilityOfAllElements(popularList));
+			System.out.println(popularList.size()/2);
+			if(index>popularList.size()*0.3) {
+				scrollDown(destinationsListComtainer, destinationsListComtainer.getSize().height/2);
+			}
+			System.out.println("Loop: " + index);
+			String expected = getText(popularList.get(index).findElement(By.cssSelector(".destinations-page-item__title")));
 			int endIndex = expected.indexOf(",");
 			expected = expected.substring(0, endIndex);
 			System.out.println(expected);
-			click(popularList.get(counter));
-			waiting(6000);
-//			waitForVisibilityOf(driver.findElement(By.cssSelector("#__next .destination-description__heading")));
-			ItemPage ip = new ItemPage(driver);
-			String actual = ip.popularName();
-			waiting(6000);
-			System.out.println(actual);
-			if(actual.contains(expected)) {
-				return true;
-			}
-			else {
-				return false;
-			}
+			click(popularList.get(index));
+			return expected;
 		}
 }

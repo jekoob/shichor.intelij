@@ -1,0 +1,1 @@
+{"uuid":"2bb3493d-36a9-4287-a164-1418a186ae3b","name":"tests.DestanationsTest","children":["049cd534-dd6b-4699-bffd-ac5374968efa"],"befores":[{"name":"bfc01_setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1648510186497,"stop":1648510198360}],"afters":[],"start":1648510186448,"stop":1648510202708}

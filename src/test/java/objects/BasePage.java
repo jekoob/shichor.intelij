@@ -160,12 +160,13 @@ public class BasePage {
 	}
 
 	// Scroll Down on page
-	void scrollDown(WebElement element, WebElement height) {
+	void scrollDown(WebElement element, int height) {
 
-		for (int i = 0; i < height.getSize().height; i += 10) {
-			((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + i + ")", element);
+		for (int i = 0; i < height; i += 40) {
+			((JavascriptExecutor) driver).executeScript("window.scrollBy(0, "+i+")", element);
 		}
 	}
+
 
 	// Validation
 	public boolean validationTitleTab(String titleTab) {
